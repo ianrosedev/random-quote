@@ -2,12 +2,13 @@
 $('#get-another-quote-button').on('click', function(e) {
   e.preventDefault();
   $.ajax( {
-    url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?escape=javascript',
+    url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
     success: function(data) {
       var post = data.shift(); // The data is an array of posts. Grab the first one.
-      $('#quote-content').html(post.content);
+      var quoteNoHTML = post.content.replace(/<\/?[^>]+>/gi, '');
+      $('#quote-content').html(quoteNoHTML);
       $('#quote-title').html(post.title);
-      $("#twitter").attr("href", "http://twitter.com/home?status=" + post.content)
+      $("#twitter").attr("href", "https://twitter.com/home?status=" + quoteNoHTML + '- ' + post.title)
     },
     cache: false
   });
