@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Kalam:700);
+
 body {
   background-color: #10ffaf;
+  font-family: 'Kalam', cursive; sans-serif;
 }
 
 #main-content {
@@ -8,16 +11,40 @@ body {
   border: 2.5px solid #FFF;
   border-radius: 10px;
 }
-
 #main-content h1 {
   font-size: 30px;
 }
-
 #main-content h3 {
   text-align: right;
   font-size: 25px;
 }
 
+button {
+  float: left;
+  font-size: 25px;
+  border: 2px solid #36ad96;
+  border-radius: 5px;
+  background-color: transparent;
+}
+button:hover {
+  background-color: aquamarine;
+}
+
+img {
+  float: inherit;
+  margin-left: 8px;
+  border: 2px solid #36ad96;
+  border-radius: 5px;
+  padding: 2.5px;
+  width: 28.5px;
+  height: 28.5px;
+}
+img:hover {
+  background-color: aquamarine;
+}
+
+
+/* Small Screen */
 @media (max-width: 480px) {
   #main-content {
     margin: 5vw;
