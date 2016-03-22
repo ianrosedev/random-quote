@@ -7,7 +7,10 @@ $('#get-another-quote-button').on('click', function(e) {
       var post = data.shift(); // The data is an array of posts. Grab the first one.
       $('#quote-content').html(post.content);
       $('#quote-title').html(post.title);
+      $("#twitter").attr("href", "http://twitter.com/home?status=" + post.content)
     },
     cache: false
   });
 }).click(); //loads first quote on page load
+
+
